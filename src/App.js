@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Teams from "./components/Teams";
+import Teams from "./components/Teams_nba";
 import Games from "./components/Games";
 import Typography from '@material-ui/core/Typography';
 import { Toolbar, Grid, withStyles, Tabs, Tab, Paper } from '@material-ui/core';
