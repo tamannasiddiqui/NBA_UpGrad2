@@ -5,18 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import { Toolbar, Grid, withStyles, Tabs, Tab, Paper } from '@material-ui/core';
 
 
-const style = {
-  heading: {
-    width: "100%",
-    textAlign: "center",
-    marginTop: "5rem",
-    color: "#f16d32"
-  },
-  tabSelected: {
-    background: "#f16d32",
-    color: "white"
-  }
-};
 
 function App(props) {
   const { classes } = props;
