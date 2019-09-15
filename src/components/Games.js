@@ -57,36 +57,36 @@ function Games() {
     if (data[0] === "Loading") 
         fetchData(page, (data) => {setData(data); setLoading(false)});
     return (
-        <Paper>
-            <Grid container wrap="wrap" style={{ textAlign: "center" }} spacing={40}>
-                {
-                    loading ?
-                        <Loading /> :
-                        data.map((item, idx) => {
-                            return (
-                                <Grid item md={4} lg={3} xs={12} key={idx} onClick={(e) => {return openModal(e,idx)}}>
-                                    <Typography variant="title">
-                                        {(new Date(item.date)).toLocaleDateString("latn", options)}
-                                        <Typography variant="subtitle1">
-                                            {item.status}
+            <Paper>
+                <Grid container wrap="wrap" style={{ textAlign: "center" }} spacing={40}>
+                    {
+                        loading ?
+                            <Loading /> :
+                            data.map((item, idx) => {
+                                return (
+                                    <Grid item md={4} lg={3} xs={12} key={idx} onClick={(e) => {return openModal(e,idx)}}>
+                                        <Typography variant="title">
+                                            {(new Date(item.date)).toLocaleDateString("latn", options)}
+                                            <Typography variant="subtitle1">
+                                                {item.status}
+                                            </Typography>
                                         </Typography>
-                                    </Typography>
-                                    <DialogGames data={item} open={modalOpen[idx]} close={() => {return closeModal(idx)}}/>
-                                </Grid>
-                            );
-                        })
-                }
-            </Grid>
-            <Grid container spacing={40} justify="center" style={{ textAlign: "center" }}>
-                <Grid item md={6} lg={6} xs={12}>
-                    <Button size="large" style={{ background: "#60cb5c", color: "white" }} onClick={handlePrevious}>Previous</Button>
+                                        <DialogGames data={item} open={modalOpen[idx]} close={() => {return closeModal(idx)}}/>
+                                    </Grid>
+                                );
+                            })
+                    }
                 </Grid>
-                <Grid item md={6} lg={6} xs={12}>
-                    <Button size="large" style={{ background: "#60cb5c", color: "white" }} onClick={handleNext}>Next</Button>
+                <Grid container spacing={40} justify="center" style={{ textAlign: "center" }}>
+                    <Grid item md={6} lg={6} xs={12}>
+                        <Button size="large" style={{ background: "#60cb5c", color: "white" }} onClick={handlePrevious}>Previous</Button>
+                    </Grid>
+                    <Grid item md={6} lg={6} xs={12}>
+                        <Button size="large" style={{ background: "#60cb5c", color: "white" }} onClick={handleNext}>Next</Button>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Paper>
-    )
+            </Paper>
+        )
 }
 
 export default Games;
